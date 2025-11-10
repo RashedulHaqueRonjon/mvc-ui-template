@@ -1,0 +1,27 @@
+﻿<!-- Bootstrap-styled Validation Script Partial -->
+<environment include="Development">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</environment>
+
+<environment exclude="Development">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha384-wpf0FVfD1i2aKdbm5l1tGbRHJ+vOEI2vwsQIQD8kqUgFZyD2s6RyshfMlC1+wzP9"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+</environment>
+
+<script>
+    // Optional: Add Bootstrap validation feedback
+    $(function () {
+        $("form").each(function () {
+            $(this).on("submit", function () {
+                if (!$(this).valid()) {
+                    $(this).addClass("was-validated");
+                }
+            });
+        });
+    });
+</script>

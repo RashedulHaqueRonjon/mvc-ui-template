@@ -1,0 +1,42 @@
+﻿@model MVCUITemplate.Models.Customer
+
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<div class="container py-3">
+    <h2 class="mb-3 text-primary">Customer Details</h2>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3 fw-semibold">Title</dt>
+        <dd class="col-sm-9">@Model.Title</dd>
+
+        <dt class="col-sm-3 fw-semibold">First Name</dt>
+        <dd class="col-sm-9">@Model.FirstName</dd>
+
+        <dt class="col-sm-3 fw-semibold">Last Name</dt>
+        <dd class="col-sm-9">@Model.LastName</dd>
+
+        <dt class="col-sm-3 fw-semibold">Company</dt>
+        <dd class="col-sm-9">@Model.CompanyName</dd>
+
+        <dt class="col-sm-3 fw-semibold">Email</dt>
+        <dd class="col-sm-9">@Model.EmailAddress</dd>
+
+        <dt class="col-sm-3 fw-semibold">Phone</dt>
+        <dd class="col-sm-9">@Model.Phone</dd>
+
+        <dt class="col-sm-3 fw-semibold">Modified Date</dt>
+        <dd class="col-sm-9">@Model.ModifiedDate.ToString("dd MMM yyyy hh:mm tt")</dd>
+    </dl>
+
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.CustomerID" class="btn btn-primary me-2">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+</div>

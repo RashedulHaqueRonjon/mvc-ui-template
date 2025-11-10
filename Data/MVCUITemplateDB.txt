@@ -1,0 +1,50 @@
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'MVCUITemplateDB')
+BEGIN
+    CREATE DATABASE [MVCUITemplateDB];
+END
+GO
+
+USE [MVCUITemplateDB];
+GO
+
+SET NOCOUNT ON;
+SET XACT_ABORT ON;
+GO
+
+-- drop dependent objects if they exist (views, procs, tables)
+-- Drop procs
+IF OBJECT_ID('dbo.spCustomers_GetAll', 'P') IS NOT NULL DROP PROCEDURE dbo.spCustomers_GetAll;
+
+-- Drop tables
+IF OBJECT_ID('dbo.Customers', 'U') IS NOT NULL DROP TABLE dbo.Customers;
+GO
+
+
+-- Customers table
+CREATE TABLE dbo.Customers (
+    CustomerID INT IDENTITY(1,1) NOT FOR REPLICATION NOT NULL PRIMARY KEY,
+    Title NVARCHAR(8) NULL,
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    CompanyName NVARCHAR(128) NULL,
+    EmailAddress NVARCHAR(100) NOT NULL,
+    Phone NVARCHAR(25) NULL,
+    rowguid UNIQUEIDENTIFIER ROWGUIDCOL NOT NULL CONSTRAINT AK_Customers_rowguid UNIQUE
+        CONSTRAINT DF_Customers_rowguid DEFAULT (NEWID()),
+    ModifiedDate DATETIME2 NOT NULL DEFAULT (GETDATE())
+);
+GO
+
+-- Unique constraint on Email
+ALTER TABLE dbo.Customers
+ADD CONSTRAINT UQ_Customers_Email UNIQUE (EmailAddress);
+GO
+
+-- Customers_GetAll procedure
+CREATE PROCEDURE dbo.spCustomers_GetAll
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT * FROM dbo.Customers ORDER BY CustomerID;
+END
+GO

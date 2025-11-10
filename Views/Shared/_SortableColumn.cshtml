@@ -1,0 +1,20 @@
+﻿@model (string columnName, string currentSort, string displayName)
+
+@{
+    var sortOrder = Model.currentSort == Model.columnName
+        ? $"{Model.columnName}_desc"
+        : Model.columnName;
+
+    var sortIcon = Model.currentSort == Model.columnName
+        ? "bi bi-sort-up"
+        : (Model.currentSort == $"{Model.columnName}_desc"
+            ? "bi bi-sort-down"
+            : "bi bi-arrow-down-up");
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@sortOrder"
+   class="text-decoration-none fw-semibold">
+    @Model.displayName
+    <i class="@sortIcon ms-1"></i>
+</a>
