@@ -257,7 +257,17 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ### 🌟 If you find this project helpful, please consider giving it a star!
 
-**Need custom development?** Feel free to [reach out](mailto:rashedul.haque.ronjon@outlook.com)!
+📞 **Need custom development?** Feel free to [reach out](mailto:rashedul.haque.ronjon@outlook.com)!
+
+If you need a similar system customized for your business needs or have questions about implementation, feel free to reach out:
+📧 Email: rashedul.haque.ronjon@outlook.com
+💼 LinkedIn: Connect with me
+I specialize in:
+•	Custom business application development
+•	ERP system customization and optimization
+•	Database design and optimization
+•	Process automation solutions
+•	Full-stack web development
 
 </div>
 
