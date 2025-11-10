@@ -166,11 +166,11 @@ Replace SQL Server with PostgreSQL, MySQL, or SQLite by updating:
 
 Screenshots
 Feature			Preview
-Customer List		Sortable table with search and pagination (Screenshots\customer-list.png)
-Customer Details Form	Populated fields with detail information  (Screenshots\details-form.png)
-Create Form		Validated form with Bootstrap styling (Screenshots\create-form.png)
-Edit Form			Pre-populated fields with update functionality (Screenshots\edit-form.png)
-Delete Confirmation		Safe deletion with confirmation dialog (Screenshots\delete-confirmation-form.png)
+Customer List		Sortable table with search and pagination (Screenshots\customer-list.png)[Index.cshtml]
+Customer Details Form	Populated fields with detail information  (Screenshots\details-form.png)[Details.cshtml]
+Create Form		Validated form with Bootstrap styling (Screenshots\create-form.png)[Create.cshtml]
+Edit Form			Pre-populated fields with update functionality (Screenshots\edit-form.png)[Edit.cshtml]
+Delete Confirmation		Safe deletion with confirmation dialog (Screenshots\delete-confirmation-form.png)[Delete.cshtml]
 
 
 Testing
